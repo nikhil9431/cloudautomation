@@ -1,0 +1,22 @@
+to stop instances: -
+**********************
+
+import boto3
+instances = ['instance_id']
+ec2 = boto3.client('ec2')
+
+def lambda_handler(event, context):
+    ec2.stop_instances(InstanceIds=instances)
+    print('stopped your instances: ' + str(instances))
+
+to start instances: -
+*********************
+
+import boto3
+instances = ['instance_id','instance_id']
+ec2 = boto3.client('ec2')
+
+def lambda_handler(event, context):
+    ec2.start_instances(InstanceIds=instances)
+    print('started your instances: ' + str(instances))
+
